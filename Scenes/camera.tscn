@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://b27x03jwvj436"]
+
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="1_204m2"]
+[ext_resource type="Script" path="res://Scripts/camera_zoom.gd" id="2_o5i8n"]
+[ext_resource type="Shader" path="res://assets/shaders/forground_shader.gdshader" id="2_ox6v7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2loo"]
+shader = ExtResource("2_ox6v7")
+shader_parameter/MULTIPLIER = -0.47
+shader_parameter/SCALE = 0.465
+shader_parameter/SOFTNESS = 0.37
+shader_parameter/BASE_OPACITY = 1.0
+
+[node name="Camera" type="Node3D"]
+script = ExtResource("1_204m2")
+
+[node name="base_camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4915, -47.8749)
+
+[node name="background_viewport_container" type="SubViewportContainer" parent="base_camera"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background_viewport" type="SubViewport" parent="base_camera/background_viewport_container"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="background_camera" type="Camera3D" parent="base_camera/background_viewport_container/background_viewport"]
+cull_mask = 1
+script = ExtResource("2_o5i8n")
+
+[node name="foreground_viewport_container" type="SubViewportContainer" parent="base_camera/background_viewport_container"]
+material = SubResource("ShaderMaterial_f2loo")
+layout_mode = 2
+
+[node name="foreground_viewport" type="SubViewport" parent="base_camera/background_viewport_container/foreground_viewport_container"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="foreground_camera" type="Camera3D" parent="base_camera/background_viewport_container/foreground_viewport_container/foreground_viewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106288, 0)
+cull_mask = 3
+script = ExtResource("2_o5i8n")

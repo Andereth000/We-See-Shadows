@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ce6dio1ebhop2"
+path="res://.godot/imported/lightswitch.obj-98c5230767d13cfcc1add8a6d7b9419f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lightswitch.obj-98c5230767d13cfcc1add8a6d7b9419f.mesh"]
+
+source_file="res://assets/School_Assets/lightswitch.obj"
+dest_files=["res://.godot/imported/lightswitch.obj-98c5230767d13cfcc1add8a6d7b9419f.mesh", "res://.godot/imported/lightswitch.obj-98c5230767d13cfcc1add8a6d7b9419f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

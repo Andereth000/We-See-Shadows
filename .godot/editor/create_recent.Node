@@ -1,0 +1,14 @@
+ColorRect
+Container
+AudioStreamPlayer
+CollisionShape3D
+StaticBody3D
+AudioStreamPlayer3D
+Node
+Label
+Area3D
+AnimationPlayer
+OmniLight3D
+Node3D
+SpinBox
+Control

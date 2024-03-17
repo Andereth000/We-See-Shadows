@@ -1,0 +1,164 @@
+[gd_scene load_steps=16 format=3 uid="uid://d1f2tb5f4kctd"]
+
+[ext_resource type="FontFile" uid="uid://cqu5gto8mx68k" path="res://assets/Fonts/Cinzel/Cinzel-Medium.ttf" id="1_8f0gy"]
+[ext_resource type="FontFile" uid="uid://bctovf784evao" path="res://assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="1_abg65"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_m0dev"]
+[ext_resource type="FontFile" uid="uid://vvxv2q7nkri0" path="res://assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="4_lxiai"]
+[ext_resource type="AudioStream" uid="uid://c0boxxw16acro" path="res://assets/Audio/femme fatale.mp3" id="5_hwcdy"]
+[ext_resource type="AudioStream" uid="uid://ro5h41gujc0a" path="res://assets/Audio/33786__jobro__4-beep-c.wav" id="6_euvdi"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_d4rs0"]
+file = "res://assets/Videos/We_See_Shadows_Main_Menu.ogv"
+
+[sub_resource type="Theme" id="Theme_lv7ts"]
+default_font = ExtResource("4_lxiai")
+
+[sub_resource type="Theme" id="Theme_thpkj"]
+default_font = ExtResource("4_lxiai")
+
+[sub_resource type="Theme" id="Theme_v2tts"]
+default_font = ExtResource("4_lxiai")
+
+[sub_resource type="Theme" id="Theme_15ysp"]
+default_font = ExtResource("1_abg65")
+
+[sub_resource type="LabelSettings" id="LabelSettings_blude"]
+font_size = 43
+
+[sub_resource type="Theme" id="Theme_d71rp"]
+default_font = ExtResource("1_8f0gy")
+
+[sub_resource type="Theme" id="Theme_quxng"]
+default_font = ExtResource("1_8f0gy")
+
+[sub_resource type="Theme" id="Theme_14111"]
+default_font = ExtResource("1_8f0gy")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m0dev")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = SubResource("VideoStreamTheora_d4rs0")
+autoplay = true
+expand = true
+loop = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 269.715
+offset_top = -52.0
+offset_right = 463.715
+offset_bottom = 52.0
+grow_vertical = 2
+
+[node name="Toggle Fullscreen" type="CheckBox" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_lv7ts")
+text = "Toggle Fullscreen"
+
+[node name="Enable VSync" type="CheckBox" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_thpkj")
+text = "Enable VSync"
+
+[node name="Back" type="Button" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_v2tts")
+text = "Back"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings"]
+layout_mode = 0
+offset_left = 263.705
+offset_top = 190.0
+offset_right = 475.706
+offset_bottom = 249.0
+theme = SubResource("Theme_15ysp")
+
+[node name="Label" type="Label" parent="Settings/HBoxContainer"]
+layout_mode = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_blude")
+
+[node name="Main" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 130.0
+offset_top = 252.0
+offset_right = 590.999
+offset_bottom = 356.0
+grow_vertical = 2
+
+[node name="New Game" type="Button" parent="Main/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_d71rp")
+text = "New Game"
+
+[node name="Settings" type="Button" parent="Main/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_quxng")
+text = "Settings"
+
+[node name="Exit" type="Button" parent="Main/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_14111")
+text = "Exit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 189.555
+offset_right = 545.001
+offset_bottom = 248.555
+theme = SubResource("Theme_15ysp")
+
+[node name="Label" type="Label" parent="Main/HBoxContainer"]
+layout_mode = 2
+text = "We See Shadows"
+label_settings = SubResource("LabelSettings_blude")
+
+[node name="Femme Fatale" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hwcdy")
+volume_db = -5.0
+autoplay = true
+
+[node name="Beep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_euvdi")
+volume_db = -3.0
+
+[connection signal="toggled" from="Settings/VBoxContainer/Toggle Fullscreen" to="." method="_on_toggle_fullscreen_toggled"]
+[connection signal="toggled" from="Settings/VBoxContainer/Enable VSync" to="." method="_on_enable_v_sync_toggled"]
+[connection signal="pressed" from="Settings/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

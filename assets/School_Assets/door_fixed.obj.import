@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dijxos15wxv32"
+path="res://.godot/imported/door_fixed.obj-bbb777fd5f220bc3fea1c8d3e98a4b2c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door_fixed.obj-bbb777fd5f220bc3fea1c8d3e98a4b2c.mesh"]
+
+source_file="res://assets/School_Assets/door_fixed.obj"
+dest_files=["res://.godot/imported/door_fixed.obj-bbb777fd5f220bc3fea1c8d3e98a4b2c.mesh", "res://.godot/imported/door_fixed.obj-bbb777fd5f220bc3fea1c8d3e98a4b2c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

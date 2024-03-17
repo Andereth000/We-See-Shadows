@@ -1,0 +1,9 @@
+res://Scenes/main_menu.tscn
+res://assets/shaders/forground_shader.gdshader
+res://assets/shaders/Vignette_Shader.gdshader
+res://assets/shaders/Distortion_Shader.gdshader
+res://Scenes/intro_cutscene.tscn
+res://Scenes/camera.tscn
+res://Scenes/School_Night.tscn
+res://Scenes/School_Storage.tscn
+res://Scenes/School.tscn

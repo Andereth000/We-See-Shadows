@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bohk87refcug8"
+path="res://.godot/imported/doubledoor.obj-cdc4edb4ce4cfa7f0c6eb690e71f034b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/doubledoor.obj-cdc4edb4ce4cfa7f0c6eb690e71f034b.mesh"]
+
+source_file="res://assets/School_Assets/doubledoor.obj"
+dest_files=["res://.godot/imported/doubledoor.obj-cdc4edb4ce4cfa7f0c6eb690e71f034b.mesh", "res://.godot/imported/doubledoor.obj-cdc4edb4ce4cfa7f0c6eb690e71f034b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
